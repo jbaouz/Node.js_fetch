@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autocomplétion input prénom</title>
+</head>
+<body>
+    <h1>TD Autocomplétion d'un input</h1>
+    <input type="text" id="prenom" placeholder="Entrez un prénom">
+    <p id="answer"></p>
+    <p id="answer2"></p>
+    <p id="answer3"></p>
+    <script>
+        
+        // function affichage des résultats possibles
+        function display_name(arg){
+            let resultat = arg.split('\",\"')
+            answer2.innerHTML = resultat.length+" resultats possibles"
+            console.log(resultat)
+            if(resultat.length < 20){
+                answer3.innerHTML = ""
+                const regex = /[a-z-á]+/g
+                for(let i=0; i<resultat.length; i++){
+                    answer3.innerHTML += resultat[i].match(regex)+"<br>"
+                }
+            }
+        }
+            
+        // Affichage de l'input dans un <p></p>
+        document.getElementById('prenom').addEventListener("keyup", ()=>{
+            answer.innerHTML = prenom.value
+
+            // Méthode fetch
+            fetch("/deliverName/"+prenom.value)
+            .then(
+                response=>response.text()
+            )
+            .then(
+                result=>display_name(result)
+            )
+            .catch(
+                function (err) {
+                    console.log(err.message)
+                }
+            )
+        })
+    </script>
+</body>
+</html>
