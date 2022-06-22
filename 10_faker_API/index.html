@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>faker_API</title>
+    <style>
+        header{
+            display: flex;
+            flex-direction: row;
+            background-color: rgb(173, 173, 173);
+            margin-bottom: 5px;
+        }
+        header > h1 {
+            margin-left: 10px;
+        }
+        header > button{
+            display: flex;
+            height: fit-content;
+            width: fit-content;
+            align-self:center;
+            margin-left: 10px;
+        }
+        #main{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        img{
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header><h1>User's Cards</h1><button id="add_profil">Add profil</button></header>
+        <div id="main"></div>
+
+<!--######################################### SCRIPT ###########################################################-->
+    <script>
+        // variables
+        let usable_data = []
+        let usable_data2
+       
+        // Création des fiches
+        let parent_div = document.getElementById('main')
+        document.getElementById('add_profil').addEventListener(('click'), create_fake_profil)
+        
+        // fonction create_fake_profil
+        let counter = 0
+        function create_fake_profil(){
+            for(let i=0; i<4; i++){
+                random = usable_data2[Math.floor(Math.random() * usable_data2.length)]
+                usable_data.push(random)
+            }
+            console.log(usable_data)
+            counter++
+            let big_div = document.createElement('div')
+            big_div.setAttribute("id",counter)
+            big_div.setAttribute("style","margin-top:5px; display: flex; flex-direction: row; justify-content: space-between;")
+            if(counter%2 == 0){
+                big_div.setAttribute("style","margin-top:5px; background-color:rgb(230, 230, 230);display: flex; flex-direction: row; justify-content: space-between;")
+            }
+            main.appendChild(big_div)
+            for(let el of usable_data) {
+            console.log(el)
+            // stockage dans une div
+            let uniq_div = document.createElement('div')
+            uniq_div.setAttribute("id",el)
+            big_div.appendChild(uniq_div)
+            // création de l'image
+            let imge = document.createElement('img')
+            imge.setAttribute("src",el.picture.medium)
+            uniq_div.appendChild(imge)
+            // nom & prénom
+            let name = document.createElement('p')
+            name.innerHTML = "<strong>"+el.name.title +" "+ el.name.first +" "+ el.name.last+"</strong>"
+            uniq_div.appendChild(name)
+            // gender & age
+            let gender = document.createElement('p')
+            gender.innerText = el.gender +" "+ el.dob.age
+            uniq_div.appendChild(gender)
+            // adress
+            let adress = document.createElement('p')
+            adress.innerText = el.location.street.number +", "+ el.location.street.name +
+            "\n" + el.location.postcode + " - " + el.location.city + "\n" + el.location.country + ". Nat: "+ el.nat
+            uniq_div.appendChild(adress)
+            // Contact
+            let contact = document.createElement('p')
+            contact.innerText = "cell: " + el.cell + "\nemail: " + el.email
+            uniq_div.appendChild(contact)
+            }
+            usable_data = []
+        }
+        
+        // fonction create_fake
+        function create_fake(arg) {
+            usable_data2 = arg.results
+            console.log(usable_data2)
+        }
+
+            // Méthode fetch
+            fetch("/fakeProfils")
+            
+            .then(
+                response=>response.json()
+            )
+            .then(
+                result=>create_fake(result)
+            )
+            .catch(
+                function (err) {
+                    console.log(err.message)
+                }
+            )
+
+    </script>
+</body>
+</html>
