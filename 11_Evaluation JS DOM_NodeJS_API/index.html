@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Eval JS DOM_Nodejs_API</title>
+</head>
+<body>
+    <!--********** Conteneur principale **********-->
+    <div class="container-fluid">
+
+    <!--********** Menu Principal **********-->
+        <div class="row" id="menu">
+            <nav class="navbar navbar-light bg-light">
+                <form class="form-inline" id="buttons123">
+                  <button id="module1Btn" class="btn btn-sm btn-outline-primary" type="button">Module 1</button>
+                  <button id="module2Btn" class="btn btn-sm btn-outline-primary" type="button">Module 2</button>
+                  <button id="module3Btn" class="btn btn-sm btn-outline-primary" type="button">Module 3</button>
+                </form>
+              </nav>
+        </div>
+    <!--********** Conteneur secondaire main_row **********-->
+        <div class="row" id="main_row">
+
+    <!--********** Module1 **********-->
+            <div class="col-3" id="module1">
+                <div class="row" id="mod1"><p>Module 1 - images</p><button type="button" id="Xbutton1" class="btn btn-outline-primary">X</button></div>
+                <div class="row" id="links_img">
+                    <div class="list-group" id="link_img1">
+                        <a href="#" class="list-group-item list-group-item-action">link1</a>
+                        <a href="#" class="list-group-item list-group-item-action">link2</a>
+                        <a href="#" class="list-group-item list-group-item-action">link3</a>
+                    </div>
+                </div>
+                <div class="row" id="img_module1">
+                    <div class="text-center">
+                        <img src="" class="rounded" alt="randomPic" id="module1_pics">
+                      </div>
+                </div>
+            </div>
+
+    <!--********** conteneur modules 2 & 3 **********-->
+            <div class="col-8" id="mod2_3">
+
+    <!--********** Module2 **********-->
+                <div class="row" id="module2">
+                    <div class="row" id="mod2"><p>Module 2 - Users + Credit Cards</p><button type="button" id="Xbutton2" class="btn btn-outline-primary">X</button></div>
+                    <div class="col-lg-2" id="user1">
+                        <button type="button" id="badge_usr1" class="btn btn-primary">User1</button>
+                        <div class="card">
+                            <div class="card-body">
+                               <h5 class="card-title" id="userh51">User1</h5>
+                               <p class="card-text" id="userp1">Contenu textuel de la carte</p>
+                               <img src="" class="rounded float-end" alt="" id="userImg1">
+                            </div>
+                         </div>
+                    </div>
+                    <div class="col-lg-2" id="user2">
+                        <button type="button" id="badge_usr2" class="btn btn-primary">User2</button>
+                        <div class="card">
+                            <div class="card-body">
+                               <h5 class="card-title" id="userh52">User2</h5>
+                               <p class="card-text" id="userp2">Contenu textuel de la carte</p>
+                               <img src="" class="rounded float-end" alt="" id="userImg2">
+                            </div>
+                         </div>
+                    </div>
+                    <div class="col-lg-2" id="user3">
+                        <button type="button" id="badge_usr3" class="btn btn-primary">User3</button>
+                        <div class="card">
+                            <div class="card-body">
+                               <h5 class="card-title" id="userh53">User3</h5>
+                               <p class="card-text" id="userp3">Contenu textuel de la carte</p>
+                               <img src="" class="rounded float-end" alt="" id="userImg3">
+                            </div>
+                         </div>
+                    </div>
+                    <div class="col-lg-4" id="cardInfo">
+                        <button type="button" id="badge_card" class="btn btn-secondary" disabled>CardInfo</button>
+                        <div class="card">
+                            <div class="card-body">
+                               <h5 class="card-title" id="cardTitle">CardInfo</h5>
+                               <p class="card-text" id="cardText">Contenu textuel de la carte</p>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+
+    <!--********** Module3 **********-->
+                <div class="row-1" id="module3">
+                    <div class="row-1" id="mod3"><p>Module 3 Companies</p><button type="button" id="Xbutton3" class="btn btn-outline-primary">X</button></div>
+                    <button type="button" id="badge_company" class="btn btn-secondary" disabled>Company Name</button>
+                    <button type="button" id="badge_company_refresh" class="btn btn-primary" >&#x21BA;</button>
+                        <div class="card" id="mod3-1_layout">
+                        <div class="card-body" id="mod3-2_layout">
+                            <div class="col-lg-2" id="cpny-dts">Company random</div>
+                            <div class="col-lg-3" id="contact">
+                                <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title" id="companyTitle"><strong>Contact</strong></h5>
+                                     <p class="card-text" id="companyText">Contenu textuel de la carte</p>
+                                     <img src="" class="rounded float-right" alt="logo ets" id="company_logo">
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3" id="adr1">
+                                <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title" id="adrTitle1"><strong>ADR1</strong></h5>
+                                    <p class="card-text" id="adrText1">Contenu textuel de la carte</p>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3" id="adr2">
+                                <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title" id="adrTitle2"><strong>ADR2</strong></h5>
+                                    <p class="card-text" id="adrText2">adresse unique</p>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--######################################## SCRIPT ######################################## -->
+    <script>
+        
+        // ########## Affichage/Masquage des modules ##########
+        // Affichage
+        let module1 = document.getElementById('module1')
+        let module2 = document.getElementById('module2')
+        let module3 = document.getElementById('module3')
+
+        for (let el of buttons123){
+            el.addEventListener('click',Show)
+            
+            function Show(e){
+            let moduleChosen = e.target.id
+            switch(moduleChosen) {
+                case "module1Btn":
+                    module1.setAttribute("style","visibility: visible;")
+                break;
+                case "module2Btn":
+                    module2.setAttribute("style","visibility: visible;")
+                break;
+                case "module3Btn":
+                    module3.setAttribute("style","visibility: visible;")
+                break;
+            default:
+                console.log("erreur boutons123")
+            }
+        }
+    }
+    
+
+        //Masquage
+        Xbutton1.addEventListener('click',() => {
+            module1.setAttribute("style","visibility: hidden;")
+        })
+        Xbutton2.addEventListener('click',() => {
+            module2.setAttribute("style","visibility: hidden;")
+        })
+        Xbutton3.addEventListener('click',() => {
+            module3.setAttribute("style","visibility: hidden;")
+        })
+        
+
+    // ########## Gestion du module 1 #######################################################################
+    // Méthode fetch
+    fetch("/module1/images")
+        .then(
+            response=>response.json()
+        )
+        .then(
+            result=>image_module1(result)
+        )
+        .catch(
+            function (err) {
+                console.log(err.message)
+            }
+        )
+
+    // fonction de gestion affichage des photos du module 1
+    // variables
+    let usable_data = []
+    let usable_data2
+
+    // récupération des data
+    function image_module1(arg){
+        usable_data2 = arg.results
+    }
+    // création evenement sur les liens
+    let picture = document.getElementById('module1_pics')
+    let links = document.getElementById('link_img1')
+
+    // activation les lien on mouseover
+    for (let el of links.children){
+        el.addEventListener('mouseover',affichePicture)
+    }
+    
+    // fonction create_fake_profil
+    function affichePicture(e){
+        for(let i=0; i<3; i++){
+            random = usable_data2[Math.floor(Math.random() * usable_data2.length)]
+            usable_data.push(random)
+        }
+        switch(e.target.text) {
+            case "link1":
+                picture.setAttribute("src",usable_data[0].picture.large)
+            break;
+            case "link2":
+                picture.setAttribute("src",usable_data[1].picture.large)
+            break;
+            case "link3":
+                picture.setAttribute("src",usable_data[2].picture.large)
+            break;
+        default:
+            console.log("erreur links image module1")
+        }
+    }
+
+    // ########## Gestion du module 2 #######################################################################
+    // Méthode fetch
+    fetch("/module2/users")
+        .then(
+            response=>response.json()
+        )
+        .then(
+            result=>card_module2(result)
+        )
+        .catch(
+            function (err) {
+                console.log(err.message)
+            }
+        )
+
+    // fonction de gestion affichage des cartes du module 2
+    // variables
+    let creditCard_data = []
+    let creditCard_data2
+
+    // récupération des data
+    function card_module2(arg){
+        creditCard_data2 = arg.data
+    }
+    
+    // peupler les users
+    //user1
+    let user_b = document.getElementById('module2')
+    let user_button1 = user_b.children[1].children[0]
+    user_button1.addEventListener('mouseover',peupleUser1)
+
+    function peupleUser1(){
+        let nme = document.getElementById('userh51')
+        let dtls = document.getElementById('userp1')
+        let img = document.getElementById('userImg1')
+        nme.innerText = usable_data2[0].name.title +" "+ usable_data2[0].name.last +"\n"+usable_data2[0].name.first
+        dtls.innerText = usable_data2[0].email
+        img.setAttribute('src',usable_data2[0].picture.thumbnail)
+    }
+
+    //user 2
+    let user_b2 = document.getElementById('module2')
+    let user_button2 = user_b.children[2].children[0]
+    user_button2.addEventListener('mouseover',peupleUser2)
+
+    function peupleUser2(){
+        let nme = document.getElementById('userh52')
+        let dtls = document.getElementById('userp2')
+        let img = document.getElementById('userImg2')
+        nme.innerText = usable_data2[1].name.title +" "+ usable_data2[1].name.last +"\n"+usable_data2[1].name.first
+        dtls.innerText = usable_data2[1].email
+        img.setAttribute('src',usable_data2[1].picture.thumbnail)
+    }
+
+    //user 3
+    let user_b3 = document.getElementById('module2')
+    let user_button3 = user_b.children[3].children[0]
+    user_button3.addEventListener('mouseover',peupleUser3)
+
+    function peupleUser3(){
+        let nme = document.getElementById('userh53')
+        let dtls = document.getElementById('userp3')
+        let img = document.getElementById('userImg3')
+        nme.innerText = usable_data2[2].name.title +" "+ usable_data2[2].name.last +"\n"+usable_data2[2].name.first
+        dtls.innerText = usable_data2[2].email
+        img.setAttribute('src',usable_data2[2].picture.thumbnail)
+    }
+
+    // afficher les infos de Card
+    let cardTi = document.getElementById('cardTitle')
+    let cardTe = document.getElementById('cardText')
+    // user1
+    user_button1.addEventListener('click', peupleCard1 =()=>{
+        cardTi.innerHTML = creditCard_data2[0].type+"<hr>"
+        cardTe.innerHTML = "<em>Name:</em><br>"+ creditCard_data2[0].owner +"<br>"+ "<em>numéro de carte:</em><br>"+ creditCard_data2[0].number 
+        +"<br>"+ "<em>expire:</em><br>"+ creditCard_data2[0].expiration
+    })
+
+    // user2
+    user_button2.addEventListener('click', peupleCard2 =()=>{
+        cardTi.innerHTML = creditCard_data2[1].type+"<hr>"
+        cardTe.innerHTML = "<em>Name:</em><br>"+ creditCard_data2[1].owner +"<br>"+ "<em>numéro de carte:</em><br>"+ creditCard_data2[0].number 
+        +"<br>"+ "<em>expire:</em><br>"+ creditCard_data2[1].expiration
+    })
+    // user3
+    user_button3.addEventListener('click', peupleCard3 =()=>{
+        cardTi.innerHTML = creditCard_data2[2].type+"<hr>"
+        cardTe.innerHTML = "<em>Name:</em><br>"+ creditCard_data2[2].owner +"<br>"+ "<em>numéro de carte:</em><br>"+ creditCard_data2[0].number 
+        +"<br>"+ "<em>expire:</em><br>"+ creditCard_data2[2].expiration
+    })
+
+    // ########## Gestion du module 3 #######################################################################
+    // Méthode fetch
+    fetch("/module3/company")
+        .then(
+            response=>response.json()
+        )
+        .then(
+            result=>company_module3(result)
+        )
+        .catch(
+            function (err) {
+                console.log(err.message)
+            }
+        )
+
+    // fonction de gestion affichage des cartes du module 2
+    // variables
+    let company_data = []
+    let company_data2
+    let rand = 0;
+
+    // récupération des data
+    function company_module3(arg){
+        company_data2 = arg.data
+        console.log(company_data2)
+        document.getElementById('badge_company_refresh').addEventListener('click', randComp = ()=>{
+            rand = Math.floor(Math.random() * company_data2.length)
+        console.log(rand)
+        
+        // first card
+        let descEts = document.getElementById('cpny-dts')
+        descEts.innerHTML = "<strong>"+company_data2[rand].name+"</strong>"+"<br><br>"+ company_data2[rand].website +"\n"+ company_data2[rand].phone
+        +"<br><br>"+ company_data2[rand].country
+
+        // second card
+        let contact = document.getElementById('companyText')
+        contact.innerHTML = company_data2[rand].contact.firstname +"<br>"+ company_data2[rand].contact.lastname
+        +"<br>"+ company_data2[rand].contact.email
+        let logo = document.getElementById('company_logo')
+        logo.setAttribute("src", usable_data[rand].picture.large)
+
+        // ADR1
+        let adr1 = document.getElementById('adrText1')
+        adr1.innerText = company_data2[rand].addresses[0].street +"\n"+ company_data2[rand].addresses[0].city
+        +"\n"+ company_data2[rand].addresses[0].zipcode
+        // ADR2
+        let adr2 = document.getElementById('adrText2')
+        adr2.innerText = company_data2[rand].addresses[1].street +"\n"+ company_data2[rand].addresses[1].city
+        +"\n"+ company_data2[rand].addresses[1].zipcode
+        }) 
+    }
+    
+    
+    </script>
+</body>
+</html>
